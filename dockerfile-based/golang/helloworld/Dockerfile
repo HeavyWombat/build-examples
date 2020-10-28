@@ -8,7 +8,7 @@ RUN go build \
     -o /tmp/helloworld \
     main.go
 
-FROM alpine:latest
-COPY --from=build /tmp/helloworld /usr/local/bin/helloworld
-ENTRYPOINT [ "/usr/local/bin/helloworld" ]
+FROM scratch
+COPY --from=build /tmp/helloworld ./helloworld
+ENTRYPOINT [ "./helloworld" ]
 EXPOSE 8080
