@@ -12,9 +12,9 @@ RUN go build \
     main.go
 
 RUN stress \
-    --cpu 8 \
+    --cpu 2 \
     --vm 1 \
-    --io 4 \
+    --io 1 \
     --vm-bytes 1024M \
     --timeout 5m
 
